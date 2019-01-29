@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Spirit Trivia</title>
+  </head>
+  <body>
+    <!-- Initial State -->
+
+    <div class="container">
+      <!-- Question Number -->
+      <div class="questionNumber"></div>
+
+      <!-- Simply the answer -->
+      <div class="spiritBox">
+        <h2>YOUR</h2>
+        <br />
+        <h1>SPIRIT</h1>
+        <br /><br />
+        <h2 class="spirit-name"></h2>
+      </div>
+
+      <div class="content">
+        <!-- Question will display here -->
+        <div class="content-header"></div>
+
+        <!-- Answers will display here -->
+        <div class="content-body">
+          <div class="answer-list">
+            <input type="radio" name="answer" value="" id="a1" /><label
+              for="a1"
+            ></label>
+            <input type="radio" name="answer" value="" id="a2" /><label
+              for="a2"
+            ></label>
+            <input type="radio" name="answer" value="" id="a3" /><label
+              for="a3"
+            ></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="btnGroup">
+        <button type="submit" id="controller">Next</button>
+        <button type="submit" class="reset">Reset</button>
+      </div>
+    </div>
+    <script src="./dist/bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-family: "Knewave", cursive;
+}
+
+/*Checkboxes styles*/
+input[type="checkbox"] {
+  margin-right: 15px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  height: 20px;
+  width: 20px;
+  vertical-align: text-bottom;
+}
+
+.spiritBox {
+  text-align: center;
+}
+
+.spiritBox h2 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.spiritBox h1 {
+  font-size: 56px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.spirit-name {
+  text-transform: uppercase;
+  font-size: 26px;
+  color: #fff;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: orangered;
+}
+
+.content {
+  height: 200px;
+  width: 750px;
+  max-width: 750px;
+  margin: 2em;
+  position: relative;
+  background-color: #ff7f00;
+}
+
+.content-header {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 50px 0;
+}
+
+.content-body {
+  display: inline-block;
+  width: 100%;
+
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+}
+
+.answer-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin: 0 2em;
+  height: 20px;
+  width: 20px;
+}
+
+label {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+}
+
+#controller {
+  padding: 18px 28px;
+}
+
+.reset {
+  padding: 18px 28px;
+}
+
+.questionNumber {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 38px;
+  color: #fff;
+}
