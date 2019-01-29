@@ -67,7 +67,7 @@ function showResult() {
   spiritName.innerHTML = `<h2>${result[i]}</h2>`;
 }
 
-// shuffle each question
+// shuffle each answers
 function shuffled(arr) {
   // copy arr
   arr = arr.slice();
@@ -79,7 +79,7 @@ function shuffled(arr) {
   return arr;
 }
 
-// display question in squential order => or random order
+// display question in squential order
 function displayQuestion() {
   const question = shuffled(questions[questionID].question);
   const choices = shuffled(questions[questionID].choices);
@@ -97,8 +97,10 @@ function displayQuestion() {
 displayQuestion();
 
 function resetQuiz() {
+  // basically reset everything from scratch
   questionID = 0;
   spiritName.innerHTML = null;
+  btn.disabled = false;
 }
 
 btn.addEventListener("click", function() {
@@ -113,6 +115,9 @@ btn.addEventListener("click", function() {
   // if question reach to max => show result
   if (questionID >= questions.length) {
     showResult();
+
+    // disabled next button
+    btn.disabled = true;
   }
 
   // should continue to display
@@ -120,12 +125,15 @@ btn.addEventListener("click", function() {
 });
 
 resetBtn.addEventListener("click", function() {
+  // user should receive this confirmation
   const answer = confirm("Are you sure? ");
 
+  // if they selected yes => resetQuiz() inits
   if (answer) {
     console.log("resetting...");
     resetQuiz();
   }
 
+  // will restart and view the question from the beginning
   displayQuestion();
 });

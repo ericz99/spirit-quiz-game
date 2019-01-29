@@ -108,10 +108,16 @@ label {
 
 #controller {
   padding: 18px 28px;
+  cursor: pointer;
+  color: #fff;
+  background-color: green;
 }
 
 .reset {
   padding: 18px 28px;
+  cursor: pointer;
+  color: #fff;
+  background-color: red;
 }
 
 .questionNumber {
