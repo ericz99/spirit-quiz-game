@@ -111,7 +111,7 @@ label {
   padding: 18px 28px;
   cursor: pointer;
   color: #fff;
-  background-color: green;
+  background-color: blue;
 }
 
 .reset {
@@ -119,6 +119,13 @@ label {
   cursor: pointer;
   color: #fff;
   background-color: red;
+}
+
+.start {
+  padding: 18px 28px;
+  cursor: pointer;
+  color: #fff;
+  background-color: green;
 }
 
 .questionNumber {

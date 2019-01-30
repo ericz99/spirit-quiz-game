@@ -49,6 +49,8 @@ const result = [
 var questionID = 0;
 // question amount to answer => subject to change by user
 var questionAmount = 4;
+// start game
+var startGame = false;
 
 // grab all dom element
 const questionNumber = document.querySelector(".questionNumber");
@@ -58,8 +60,9 @@ const answerList = document.querySelector(".answer-list");
 const answerChoice = Array.from(
   document.querySelectorAll("input[name=answer]")
 );
-const btn = document.querySelector("#controller");
+const nextBtn = document.querySelector("#controller");
 const resetBtn = document.querySelector(".reset");
+const startBtn = document.querySelector(".start");
 
 // fetch random result
 function showResult() {
@@ -85,7 +88,7 @@ function displayQuestion() {
   const choices = shuffled(questions[questionID].choices);
 
   questionHeader.innerHTML = `<h2>${question}</h2>`;
-  questionNumber.innerHTML = `<h1>${questionID}</h1>`;
+  questionNumber.innerHTML = `<h1>Q${questionID}</h1>`;
 
   answerChoice.forEach((input, i) => {
     input.value = choices[i];
@@ -94,16 +97,31 @@ function displayQuestion() {
   });
 }
 
-displayQuestion();
-
 function resetQuiz() {
   // basically reset everything from scratch
   questionID = 0;
   spiritName.innerHTML = null;
-  btn.disabled = false;
+  nextBtn.disabled = false;
 }
 
-btn.addEventListener("click", function() {
+function defaultStartup() {
+  if (!startGame) {
+    document.querySelector(".content-body").style.display = "none";
+  }
+}
+
+defaultStartup();
+
+function init() {
+  if (startGame) {
+    document.querySelector(".content-body").style.display = "block";
+
+    // diplay question
+    displayQuestion();
+  }
+}
+
+nextBtn.addEventListener("click", function() {
   const answer = answerChoice.find(input => input.checked);
 
   // check only if user didnt select one answer
@@ -117,7 +135,10 @@ btn.addEventListener("click", function() {
     showResult();
 
     // disabled next button
-    btn.disabled = true;
+    nextBtn.disabled = true;
+
+    // return nothing if all condition met
+    return;
   }
 
   // should continue to display
@@ -136,4 +157,18 @@ resetBtn.addEventListener("click", function() {
 
   // will restart and view the question from the beginning
   displayQuestion();
+});
+
+startBtn.addEventListener("click", e => {
+  if (e.target && !startGame) {
+    console.log("starting game");
+
+    // set start game to true
+    startGame = true;
+
+    // run this function to start the game
+    init();
+  }
+
+  return false;
 });
