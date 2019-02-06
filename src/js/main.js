@@ -51,6 +51,10 @@ var questionID = 0;
 var questionAmount = 4;
 // start game
 var startGame = false;
+// timer
+var startTimer = false;
+// 10 sec timer var
+var timer;
 
 // grab all dom element
 const questionNumber = document.querySelector(".questionNumber");
@@ -63,6 +67,18 @@ const answerChoice = Array.from(
 const nextBtn = document.querySelector("#controller");
 const resetBtn = document.querySelector(".reset");
 const startBtn = document.querySelector(".start");
+
+// this will start up after load
+defaultStartup();
+
+function defaultStartup() {
+  if (!startGame) {
+    document.querySelector(".content-body").style.display = "none";
+    document.querySelector(
+      ".content-msg"
+    ).innerHTML = `<h2>Click start to play!</h2>`;
+  }
+}
 
 // fetch random result
 function showResult() {
@@ -104,17 +120,10 @@ function resetQuiz() {
   nextBtn.disabled = false;
 }
 
-function defaultStartup() {
-  if (!startGame) {
-    document.querySelector(".content-body").style.display = "none";
-  }
-}
-
-defaultStartup();
-
 function init() {
   if (startGame) {
     document.querySelector(".content-body").style.display = "block";
+    document.querySelector(".content-msg").innerHTML = null;
 
     // diplay question
     displayQuestion();

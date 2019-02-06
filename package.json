@@ -4,6 +4,7 @@
   "description": "Spirit Trivia => User answer all questions and get a random spirit :)",
   "private": true,
   "scripts": {
+    "start": "node server.js",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server src/app.js dist/bundle.min.js",
     "build": "webpack --mode development"
@@ -21,6 +22,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "jquery": "^3.3.1"
   }
 }
