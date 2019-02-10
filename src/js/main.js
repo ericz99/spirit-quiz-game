@@ -22,6 +22,30 @@ const questions = [
   {
     question: "what is your favorite movie?",
     choices: ["rush hour series", "avengers", "batman dark knight"]
+  },
+  {
+    question: "are you handsome?",
+    choices: ["yes", "maybe", "not really"]
+  },
+  {
+    question: "what kind of pet do you own?",
+    choices: ["dogs", "cats", "etc"]
+  },
+  {
+    question: "what is your dream job?",
+    choices: ["working at google", "working at facebook", "nothing"]
+  },
+  {
+    question: "what is your desired?",
+    choices: ["getting rich", "nothing", "etc"]
+  },
+  {
+    question: "what is your favorite snacks?",
+    choices: ["chips", "crackers", "etc"]
+  },
+  {
+    question: "what is your dream car?",
+    choices: ["Audi R8", "BMW X9", "etc"]
   }
 ];
 
@@ -42,7 +66,15 @@ const result = [
   "Bird Box 2.0",
   "Hippie",
   "Quirky",
-  "Cayenne"
+  "Cayenne",
+  "Rich Boi",
+  "Hypebeast 2.0",
+  "Hypebeast 3.0",
+  "Broker",
+  "Does nothing with their life",
+  "Being a great developer",
+  "Nothing",
+  "No spirit for you!"
 ];
 
 // question id
@@ -76,7 +108,7 @@ function defaultStartup() {
     document.querySelector(".content-body").style.display = "none";
     document.querySelector(
       ".content-msg"
-    ).innerHTML = `<h2>Click start to play!</h2>`;
+    ).innerHTML = `<h2>Click start to play! :)</h2>`;
   }
 }
 
@@ -91,7 +123,7 @@ function shuffled(arr) {
   // copy arr
   arr = arr.slice();
   for (let i = 0; i < arr.length; i++) {
-    let j = Math.floor(Math.random() * (arr.length - i)) + i;
+    let j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
 
@@ -100,7 +132,7 @@ function shuffled(arr) {
 
 // display question in squential order
 function displayQuestion() {
-  const question = shuffled(questions[questionID].question);
+  const question = questions[questionID].question;
   const choices = shuffled(questions[questionID].choices);
 
   questionHeader.innerHTML = `<h2>${question}</h2>`;
@@ -170,7 +202,7 @@ resetBtn.addEventListener("click", function() {
 
 startBtn.addEventListener("click", e => {
   if (e.target && !startGame) {
-    console.log("starting game");
+    console.log("starting game...");
 
     // set start game to true
     startGame = true;
