@@ -141,3 +141,39 @@ label {
   font-size: 38px;
   color: #fff;
 }
+
+@media only screen and (max-width: 425px) {
+  .content {
+    width: 350px;
+    height: 400px;
+  }
+
+  .content-msg h2 {
+    font-size: 16px;
+  }
+
+  .content-header h2 {
+    font-size: 14px;
+  }
+
+  .answer-list {
+    flex-direction: column;
+  }
+
+  input,
+  label {
+    padding: 20px 0;
+  }
+
+  .spiritBox h2 {
+    font-size: 24px;
+  }
+
+  .spiritBox h1 {
+    font-size: 36px;
+  }
+
+  .questionNumber h1 {
+    font-size: 36px;
+  }
+}
